@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>择城计算器 - 找到你的本命之城</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 社交分享预览信息 -->
+    <meta property="og:title" content="择城计算器 - 3分钟找到你的本命之城">
+    <meta property="og:description" content="你的时间很贵，应该放在最值钱的城市。快来测测你的城市人格！">
+    <!-- 如需预览图，请将thumbnail.jpg放在项目根目录并取消下一行注释 -->
+    <!-- <meta property="og:image" content="https://你的域名/thumbnail.jpg"> -->
+</head>
+<body>
+    <!-- 欢迎页 -->
+    <div id="welcome-page" class="page active">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-city"></i> 择城记</h1>
+            </div>
+            
+            <div class="globe-container">
+                <div class="globe">
+                    <div class="globe-inner">
+                        <div class="dot" style="top: 30%; left: 50%;"></div>
+                        <div class="dot" style="top: 35%; left: 55%;"></div>
+                        <div class="dot" style="top: 40%; left: 48%;"></div>
+                    </div>
+                </div>
+                <div class="pulse"></div>
+            </div>
+            
+            <div class="welcome-text">
+                <h2>你的时间很贵，</h2>
+                <h2>应该放在最值钱的城市</h2>
+                <p>3分钟，找到你的本命之城</p>
+            </div>
+            
+            <button id="start-test" class="btn-primary">
+                <i class="fas fa-search"></i> 开始测试我的城市匹配度
+            </button>
+            
+            <div class="data-source">
+                <p>本测试基于38城“机会-压力”数据模型</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 测试问题页 -->
+    <div id="test-page" class="page">
+        <div class="container">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">25%</div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-title">未来3-5年，你更看重...</h2>
+                
+                <div class="options-container" id="options-container">
+                    <!-- 选项将由JavaScript动态生成 -->
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn-secondary">
+                    <i class="fas fa-arrow-left"></i> 上一题
+                </button>
+                <button id="next-btn" class="btn-primary">
+                    下一题 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载页 -->
+    <div id="loading-page" class="page">
+        <div class="container">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h2>正在分析你的选择...</h2>
+                <div class="city-icons">
+                    <div class="city-icon">京</div>
+                    <div class="city-icon">沪</div>
+                    <div class="city-icon">深</div>
+                    <div class="city-icon">广</div>
+                    <div class="city-icon">杭</div>
+                </div>
+                <p>为你匹配最适合的城市</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 报告页 -->
+    <div id="report-page" class="page">
+        <div class="container">
+            <div class="report-content" id="report-content">
+                <!-- 报告内容将由JavaScript动态生成 -->
+            </div>
+            
+            <div class="report-actions">
+                <button id="restart-btn" class="btn-secondary">
+                    <i class="fas fa-redo"></i> 重新测试
+                </button>
+                <button id="share-btn" class="btn-primary">
+                    <i class="fas fa-share-alt"></i> 分享结果
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分享弹窗 -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>分享你的城市人格</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="share-card" id="share-card">
+                    <!-- 分享卡内容 -->
+                </div>
+                <div class="share-buttons">
+                    <button class="share-option" id="save-image">
+                        <i class="fas fa-download"></i> 保存图片
+                    </button>
+                    <button class="share-option" id="copy-link">
+                        <i class="fas fa-link"></i> 复制链接
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
